@@ -14,6 +14,18 @@ function getPropNames (str) {
   return str.split(/and/i).map(downcaseFirst);
 }
 
+var handler = {
+  get: function (_, value) {
+    if (value.slice(0, BY.length) === BY) {
+      return createSearcher(BY, value);
+    }
+
+    if (value.slice(0, WHERE.length) === WHERE) {
+      return createSearcher(WHERE, value);
+    }
+  }
+};
+
 function createSearcher (findOrWhere, methodName) {
   var method, propNames;
 
@@ -35,18 +47,6 @@ function createSearcher (findOrWhere, methodName) {
   };
 
 }
-
-var handler = {
-  get: function (_, value) {
-    if (value.slice(0, BY.length) === BY) {
-      return createSearcher(BY, value);
-    }
-
-    if (value.slice(0, WHERE.length) === WHERE) {
-      return createSearcher(WHERE, value);
-    }
-  }
-};
 
 module.exports = {
   find: new Proxy({}, handler),
