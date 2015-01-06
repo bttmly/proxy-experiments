@@ -1,11 +1,11 @@
+var find = require("./").find;
+
 var data = [
   {size: "l", color: "red", type: "shirt"},
   {size: "s", color: "red", type: "shirt"},
   {size: "l", color: "blue", type: "pants"},
   {size: "s", color: "red", type: "pants"}
 ];
-
-var find = require("./");
 
 var newline = console.log.bind(console, "");
 

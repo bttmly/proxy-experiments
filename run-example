@@ -13,4 +13,4 @@ var experimentPath = path.join(
 
 var result = exec("node --harmony " + experimentPath);
 
-console.log(result.stdout);
+console.log(result.stderr || result.stdout);

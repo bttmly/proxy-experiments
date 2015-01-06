@@ -3,7 +3,6 @@ var Reflect = require("harmony-reflect");
 var _find = require("lodash.find");
 var _where = require("lodash.where");
 
-
 var BY = "by";
 var WHERE = "where";
 
@@ -16,8 +15,7 @@ function getPropNames (str) {
 }
 
 function createSearcher (findOrWhere, methodName) {
-  var method;
-  var propNames;
+  var method, propNames;
 
   if (findOrWhere === BY) {
     method = _find;
@@ -50,6 +48,7 @@ var handler = {
   }
 };
 
-var dynamicFind = new Proxy({}, handler);
-
-module.exports = dynamicFind;
+module.exports = {
+  find: new Proxy({}, handler),
+  handler: handler
+};
