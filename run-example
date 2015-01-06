@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var path = require("path");
+
+var exec = require("sync-exec");
+
+var experimentName = process.argv[2];
+var experimentPath = path.join(
+  __dirname,
+  experimentName,
+  "run.js"
+);
+
+var result = exec("node --harmony " + experimentPath);
+
+console.log(result.stdout);
