@@ -7,7 +7,9 @@
     "harmony-reflect": "^1.1.1",
     "lodash.find": "^2.4.1",
     "lodash.where": "^2.4.1",
-    "sync-exec": "^0.4.0"
+    "object-assign": "^2.0.0",
+    "sync-exec": "^0.4.0",
+    "wassat": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
