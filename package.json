@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "harmony-reflect": "^1.1.1",
+    "immutable": "^3.6.2",
     "lodash.find": "^2.4.1",
     "lodash.where": "^2.4.1",
     "object-assign": "^2.0.0",
